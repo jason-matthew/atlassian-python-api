@@ -116,7 +116,7 @@ class AtlassianRestAPI(object):
         message = "curl --silent -X {method} -H {headers} {data} '{url}'".format(
             method=method,
             headers=' -H '.join(["'{0}: {1}'".format(key, value) for key, value in headers.items()]),
-            data='' if not data else "--data '{0}'".format(dumps(data)),
+            data='' if not data else "--data '{0}'".format(data),
             url=url)
         log.log(level=level, msg=message)
 
